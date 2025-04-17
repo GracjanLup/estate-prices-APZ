@@ -1,0 +1,20 @@
+### 📄 Opis zmiennych w zbiorze danych `California_Houses.csv`
+
+| Nazwa kolumny               | Opis                                                                 |
+|-----------------------------|----------------------------------------------------------------------|
+| `Median_House_Value`        | **Mediana wartości domów** w danym bloku mieszkalnym (w dolarach)    |
+| `Median_Income`             | **Mediana rocznego dochodu gospodarstw domowych** w dziesiątkach tysięcy dolarów (np. 5.0 = 50 000 $) |
+| `Median_Age`                | **Średni wiek domów** w danym bloku (im mniejszy, tym nowsze budownictwo) |
+| `Tot_Rooms`                 | **Łączna liczba pomieszczeń** we wszystkich mieszkaniach danego bloku |
+| `Tot_Bedrooms`              | **Łączna liczba sypialni** w tym samym bloku                         |
+| `Population`                | **Liczba mieszkańców** w danym bloku                                |
+| `Households`                | **Liczba gospodarstw domowych** (czyli oddzielnych zamieszkałych jednostek) |
+| `Latitude`                  | **Szerokość geograficzna** bloku (im większa, tym bardziej na północ) |
+| `Longitude`                 | **Długość geograficzna** bloku (im większa, tym bardziej na zachód)  |
+| `Distance_to_coast`         | **Odległość do wybrzeża** Pacyfiku (w metrach)                       |
+| `Distance_to_LA`            | **Odległość do centrum Los Angeles** (w metrach)                     |
+| `Distance_to_SanDiego`      | **Odległość do centrum San Diego** (w metrach)                       |
+| `Distance_to_SanJose`       | **Odległość do centrum San Jose** (w metrach)                        |
+| `Distance_to_SanFrancisco`  | **Odległość do centrum San Francisco** (w metrach)                   |
+
+> Wszystkie dane odnoszą się do tzw. "bloku mieszkalnego", czyli małego obszaru statystycznego w Kalifornii.
