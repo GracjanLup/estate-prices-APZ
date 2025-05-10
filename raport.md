@@ -2,7 +2,7 @@
 
 ## Wprowadzenie
 
-W niniejszej pracy przedstawiam wyniki analizy mającej na celu prognozowanie cen nieruchomości w Kalifornii przy użyciu algorytmu XGBoost. Algorytm ten jest jednym z najskuteczniejszych narzędzi uczenia maszynowego stosowanych w zadaniach regresji, takich jak przewidywanie cen mieszkań.
+W niniejszej pracy przedstawiono wyniki analizy mającej na celu prognozowanie cen nieruchomości w Kalifornii przy użyciu algorytmu XGBoost. Algorytm ten jest jednym z najskuteczniejszych narzędzi uczenia maszynowego stosowanych w zadaniach regresji, takich jak przewidywanie cen mieszkań.
 
 Głównym celem analizy jest zbadanie, jak różne konfiguracje hiperparametrów modelu XGBoost wpływają na dokładność predykcji cen nieruchomości. W szczególności, praca koncentruje się na systematycznej analizie wpływu trzech kluczowych hiperparametrów:
 
