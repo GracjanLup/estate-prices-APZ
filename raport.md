@@ -123,18 +123,18 @@ Ogólne porównanie wszystkich modeli pokazało, że zmiany w hiperparametrach z
 
 #### Tabela 1: Porównanie wszystkich modeli
 
-| Model         | Parametr zmieniany | RMSE     | R2 Score |
-| --------------| ------------------ | -------- | -------- |
-| Model Bazowy  |                    | 53981.19 | 0.7776   |
-| Model 2       | n_estimators=50    | 58994.42 | 0.7344   |
-| Model 3       | n_estimators=200   | 50261.95 | 0.8072   |
-| Model 4       | n_estimators=500   | 47050.04 | 0.8311   |
-| Model 5       | learning_rate=0.01 | 80240.84 | 0.5087   |
-| Model 6       | learning_rate=0.05 | 59311.58 | 0.7315   |
-| Model 7       | learning_rate=0.3  | 49573.77 | 0.8125   |
-| Model 8       | max_depth=2        | 58496.66 | 0.7389   |
-| Model 9       | max_depth=6        | 47245.94 | 0.8297   |
-| Model 10      | max_depth=10       | 45620.07 | 0.8412   |
+| Model       | Parametr zmieniany | RMSE     | R2 Score |
+| ------------| ------------------ | -------- | -------- |
+| Model 1     | Bazowy             | 53981.19 | 0.7776   |
+| Model 2     | n_estimators=50    | 58994.42 | 0.7344   |
+| Model 3     | n_estimators=200   | 50261.95 | 0.8072   |
+| Model 4     | n_estimators=500   | 47050.04 | 0.8311   |
+| Model 5     | learning_rate=0.01 | 80240.84 | 0.5087   |
+| Model 6     | learning_rate=0.05 | 59311.58 | 0.7315   |
+| Model 7     | learning_rate=0.3  | 49573.77 | 0.8125   |
+| Model 8     | max_depth=2        | 58496.66 | 0.7389   |
+| Model 9     | max_depth=6        | 47245.94 | 0.8297   |
+| Model 10    | max_depth=10       | 45620.07 | 0.8412   |
 
 ### Analiza wpływu liczby estymatorów (n_estimators)
 
@@ -150,7 +150,7 @@ Wyniki te sugerują, że dla tego konkretnego zadania predykcji cen nieruchomoś
 
 | Model                     | RMSE     | R2 Score |
 | ------------------------- | -------- | -------- |
-| Model 1: Bazowy           | 53981.19 | 0.7776   |
+| Bazowy: n_estimators=100  | 53981.19 | 0.7776   |
 | Model 2: n_estimators=50  | 58994.42 | 0.7344   |
 | Model 3: n_estimators=200 | 50261.95 | 0.8072   |
 | Model 4: n_estimators=500 | 47050.04 | 0.8311   |
@@ -169,7 +169,7 @@ Obserwacje te podkreślają, że właściwe dostrojenie współczynnika uczenia 
 
 | Model                       | RMSE     | R2 Score |
 | --------------------------- | -------- | -------- |
-| Model 1: Bazowy             | 53981.19 | 0.7776   |
+| Bazowy: learning_rate=0.1   | 53981.19 | 0.7776   |
 | Model 5: learning_rate=0.01 | 80240.84 | 0.5087   |
 | Model 6: learning_rate=0.05 | 59311.58 | 0.7315   |
 | Model 7: learning_rate=0.3  | 49573.77 | 0.8125   |
@@ -188,7 +188,7 @@ Wyniki te sugerują, że dla złożonego problemu predykcji cen nieruchomości, 
 
 | Model                  | RMSE     | R2 Score |
 | ---------------------- | -------- | -------- |
-| Model 1: Bazowy        | 53981.19 | 0.7776   |
+| Bazowy: max_depth=3    | 53981.19 | 0.7776   |
 | Model 8: max_depth=2   | 58496.66 | 0.7389   |
 | Model 9: max_depth=6   | 47245.94 | 0.8297   |
 | Model 10: max_depth=10 | 45620.07 | 0.8412   |
@@ -199,29 +199,27 @@ Dla każdego z modeli przeprowadzono analizę ważności cech, która ujawniła,
 
 #### Tabela 5: Przykładowa ważność cech dla modelu bazowego
 
-| Cecha      | Ważność |
-| ---------- | ------- |
-| Latitude   | 0.3214  |
-| Longitude  | 0.2956  |
-| MedInc     | 0.1874  |
-| AveOccup   | 0.0756  |
-| HouseAge   | 0.0623  |
-| AveRooms   | 0.0327  |
-| Population | 0.0145  |
-| AveBedrms  | 0.0105  |
+| Cecha               | Ważność  |
+| ------------------- | -------- |
+| Median_Income       | 103.0    |
+| Distance_to_coast   | 99.0     |
+| Latitude            | 72.0     |
+| Longitude           | 62.0     |
+| Distance_to_LA      | 60.0     |
+| Population          | 59.0     |
+| Distance_to_SanJose | 50.0     |
 
-#### Tabela 6: Przykładowa ważność cech dla modelu z max_depth=10
+#### Tabela 6: Przykładowa ważność cech dla modelu z max_depth=2
 
-| Cecha      | Ważność |
-| ---------- | ------- |
-| Latitude   | 0.2853  |
-| Longitude  | 0.2791  |
-| MedInc     | 0.2234  |
-| HouseAge   | 0.0893  |
-| AveOccup   | 0.0543  |
-| AveRooms   | 0.0412  |
-| Population | 0.0187  |
-| AveBedrms  | 0.0087  |
+| Cecha               | Ważność  |
+| ------------------- | -------- |
+| Median_Income       | 48.0     |
+| Distance_to_coast   | 47.0     |
+| Latitude            | 30.0     |
+| Longitude           | 30.0     |
+| Distance_to_LA      | 25.0     |
+| Population          | 40.0     |
+| Distance_to_SanJose | 4.0      |
 
 1. We wszystkich modelach zaobserwowano, że niektóre cechy konsekwentnie wykazywały wysoką ważność, co sugeruje ich fundamentalne znaczenie dla predykcji cen nieruchomości w Kalifornii.
 
