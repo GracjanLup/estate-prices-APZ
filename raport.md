@@ -123,18 +123,18 @@ Ogólne porównanie wszystkich modeli pokazało, że zmiany w hiperparametrach z
 
 #### Tabela 1: Porównanie wszystkich modeli
 
-| Model                       | Parametr zmieniany | RMSE     | R2 Score |
-| --------------------------- | ------------------ | -------- | -------- |
-| Model 1: Bazowy             | Bazowy             | 53981.19 | 0.7776   |
-| Model 2: n_estimators=50    | n_estimators       | 58994.42 | 0.7344   |
-| Model 3: n_estimators=200   | n_estimators       | 50261.95 | 0.8072   |
-| Model 4: n_estimators=500   | n_estimators       | 47050.04 | 0.8311   |
-| Model 5: learning_rate=0.01 | learning_rate      | 80240.84 | 0.5087   |
-| Model 6: learning_rate=0.05 | learning_rate      | 59311.58 | 0.7315   |
-| Model 7: learning_rate=0.3  | learning_rate      | 49573.77 | 0.8125   |
-| Model 8: max_depth=2        | max_depth          | 58496.66 | 0.7389   |
-| Model 9: max_depth=6        | max_depth          | 47245.94 | 0.8297   |
-| Model 10: max_depth=10      | max_depth          | 45620.07 | 0.8412   |
+| Model         | Parametr zmieniany | RMSE     | R2 Score |
+| --------------| ------------------ | -------- | -------- |
+| Model Bazowy  |                    | 53981.19 | 0.7776   |
+| Model 2       | n_estimators=50    | 58994.42 | 0.7344   |
+| Model 3       | n_estimators=200   | 50261.95 | 0.8072   |
+| Model 4       | n_estimators=500   | 47050.04 | 0.8311   |
+| Model 5       | learning_rate=0.01 | 80240.84 | 0.5087   |
+| Model 6       | learning_rate=0.05 | 59311.58 | 0.7315   |
+| Model 7       | learning_rate=0.3  | 49573.77 | 0.8125   |
+| Model 8       | max_depth=2        | 58496.66 | 0.7389   |
+| Model 9       | max_depth=6        | 47245.94 | 0.8297   |
+| Model 10      | max_depth=10       | 45620.07 | 0.8412   |
 
 ### Analiza wpływu liczby estymatorów (n_estimators)
 
@@ -150,10 +150,10 @@ Wyniki te sugerują, że dla tego konkretnego zadania predykcji cen nieruchomoś
 
 | Model                     | RMSE     | R2 Score |
 | ------------------------- | -------- | -------- |
-| Model 1: Bazowy           | 49628.32 | 0.7816   |
-| Model 2: n_estimators=50  | 50901.67 | 0.7701   |
-| Model 3: n_estimators=200 | 48973.21 | 0.7874   |
-| Model 4: n_estimators=500 | 48714.86 | 0.7897   |
+| Model 1: Bazowy           | 53981.19 | 0.7776   |
+| Model 2: n_estimators=50  | 58994.42 | 0.7344   |
+| Model 3: n_estimators=200 | 50261.95 | 0.8072   |
+| Model 4: n_estimators=500 | 47050.04 | 0.8311   |
 
 ### Analiza wpływu współczynnika uczenia (learning_rate)
 
@@ -161,7 +161,7 @@ Analiza modeli różniących się współczynnikiem uczenia (Grupa B: modele 5, 
 
 1. Zmniejszenie współczynnika uczenia z 0.1 (model bazowy) do 0.01 (Model 5) pogorszyło wyniki modelu, prawdopodobnie ze względu na zbyt wolną zbieżność przy ograniczonej liczbie estymatorów.
 2. Umiarkowane zmniejszenie do 0.05 (Model 6) dało wyniki porównywalne z modelem bazowym.
-3. Zwiększenie współczynnika uczenia do 0.3 (Model 7) poprawiło wydajność modelu, co sugeruje, że dla tego konkretnego problemu i liczby estymatorów, szybsze tempo uczenia jest korzystne.
+3. Mimo że wyższy współczynnik uczenia zwykle niesie ryzyko przeuczenia, w tym przypadku przy zachowaniu tej samej liczby drzew (100), model z learning_rate=0.3 osiągnął najlepsze wyniki.
 
 Obserwacje te podkreślają, że właściwe dostrojenie współczynnika uczenia jest kluczowe dla optymalizacji wydajności modelu XGBoost, a jego optymalna wartość często zależy od konkretnego zbioru danych i liczby estymatorów.
 
@@ -169,10 +169,10 @@ Obserwacje te podkreślają, że właściwe dostrojenie współczynnika uczenia 
 
 | Model                       | RMSE     | R2 Score |
 | --------------------------- | -------- | -------- |
-| Model 1: Bazowy             | 49628.32 | 0.7816   |
-| Model 5: learning_rate=0.01 | 57803.91 | 0.7082   |
-| Model 6: learning_rate=0.05 | 50109.64 | 0.7774   |
-| Model 7: learning_rate=0.3  | 47901.23 | 0.7970   |
+| Model 1: Bazowy             | 53981.19 | 0.7776   |
+| Model 5: learning_rate=0.01 | 80240.84 | 0.5087   |
+| Model 6: learning_rate=0.05 | 59311.58 | 0.7315   |
+| Model 7: learning_rate=0.3  | 49573.77 | 0.8125   |
 
 ### Analiza wpływu maksymalnej głębokości drzewa (max_depth)
 
@@ -188,10 +188,10 @@ Wyniki te sugerują, że dla złożonego problemu predykcji cen nieruchomości, 
 
 | Model                  | RMSE     | R2 Score |
 | ---------------------- | -------- | -------- |
-| Model 1: Bazowy        | 49628.32 | 0.7816   |
-| Model 8: max_depth=2   | 53672.47 | 0.7462   |
-| Model 9: max_depth=6   | 45672.38 | 0.8154   |
-| Model 10: max_depth=10 | 43205.91 | 0.8357   |
+| Model 1: Bazowy        | 53981.19 | 0.7776   |
+| Model 8: max_depth=2   | 58496.66 | 0.7389   |
+| Model 9: max_depth=6   | 47245.94 | 0.8297   |
+| Model 10: max_depth=10 | 45620.07 | 0.8412   |
 
 ### Analiza ważności cech
 
@@ -227,7 +227,7 @@ Dla każdego z modeli przeprowadzono analizę ważności cech, która ujawniła,
 
 2. Zmiany w hiperparametrach modelu, szczególnie w maksymalnej głębokości drzewa, wpływały na względną ważność cech, co wskazuje na to, że różne konfiguracje modelu mogą uwypuklać różne aspekty danych.
 
-3. Modele z większą głębokością drzewa były w stanie lepiej wykorzystać bardziej złożone relacje między cechami, co potencjalnie tłumaczy ich lepszą wydajność.
+3. Sugeruje to, że głębsze drzewa mogą lepiej uchwycić złożone relacje, choć wymagałoby to dalszej analizy weryfikującej złożoność struktury drzew.
 
 Analiza ważności cech nie tylko pomogła zrozumieć działanie modelu, ale także dostarczyła praktycznych informacji o tym, które cechy nieruchomości mają największy wpływ na ich wartość rynkową. Informacje te mogą być cenne zarówno dla celów analitycznych, jak i dla podejmowania decyzji inwestycyjnych w sektorze nieruchomości.
 
